@@ -1,4 +1,3 @@
-from sqlite3.dbapi2 import connect
 import click
 import sqlite3
 import os
