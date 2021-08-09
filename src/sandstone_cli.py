@@ -75,7 +75,7 @@ def complete(_id: str):
         connection = sqlite3.connect("database.db")
         cursor = connection.cursor()
 
-        cursor.execute("UPDATE todos SET done = 1 WHERE id = ?", (_id))
+        cursor.execute("UPDATE todos SET done = 1 WHERE id = ?", (_id,))
 
         connection.commit()
         connection.close()
@@ -98,7 +98,7 @@ def uncomplete(_id: str):
         connection = sqlite3.connect("database.db")
         cursor = connection.cursor()
 
-        cursor.execute("UPDATE todos SET done = 0 WHERE id = ?", (_id))
+        cursor.execute("UPDATE todos SET done = 0 WHERE id = ?", (_id,))
 
         connection.commit()
         connection.close()
@@ -121,7 +121,7 @@ def delete(_id: str):
         connection = sqlite3.connect("database.db")
         cursor = connection.cursor()
 
-        cursor.execute("DELETE FROM todos WHERE id = ?", (_id))
+        cursor.execute("DELETE FROM todos WHERE id = ?", (_id,))
 
         connection.commit()
         connection.close()
